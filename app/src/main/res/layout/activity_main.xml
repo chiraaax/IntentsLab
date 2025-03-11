@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/btnNavigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Second Activity"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your Name"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Name to Second Activity"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnOpenWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Web Page"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnDialPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dial Phone"
+        android:padding="10dp"/>
+
+    <Button
+        android:id="@+id/btnCapturePhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Camera"
+        android:padding="10dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ✅ SECTION 1: Declare Implicit Intent Queries -->
+    <queries>
+        <!-- 📌 Allow opening web pages (supports both HTTP & HTTPS) -->
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="http"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="https"/>
+        </intent>
+
+        <!-- 📌 Allow dialing a phone number -->
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+        </intent>
+
+        <!-- 📌 Allow capturing images using the camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE"/>
+        </intent>
+    </queries>
+
+    <!-- ✅ SECTION 2: Declare Camera Permissions & Features -->
+    <!-- 📌 Ensure the device has a camera -->
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <!-- 📌 Request camera permission -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IntentsLab"
+        tools:targetApi="35">
+
+        <!-- ✅ SECTION 3: Declare SecondActivity with a Custom Intent Filter -->
+        <activity
+            android:name=".SecondActivity"
+            android:exported="false">
+            <intent-filter>
+                <!-- 📌 Custom action for launching this activity -->
+                <action android:name="com.example.MY_CUSTOM_ACTION"/>
+                <!-- 📌 Default category (required for standard app behavior) -->
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ SECTION 4: Declare MainActivity (App Entry Point) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <!-- 📌 Defines the main activity of the application -->
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
